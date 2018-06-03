@@ -62,6 +62,7 @@ in
     ocamlPackages.reason
     jekyll
     cloc
+    tree
   ];
 
   environment.extraOutputsToInstall = [ "man" ];

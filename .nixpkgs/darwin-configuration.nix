@@ -4,6 +4,7 @@ let
   fastarcheyosx = pkgs.callPackage ./src/fastarcheyosx/c.nix {};
   scmpuff = pkgs.callPackage ./src/scmpuff/c.nix {};
   highlight = pkgs.callPackage ./src/highlight/c.nix {};
+  bat = pkgs.callPackage ./src/bat.nix {};
 in
 {
 
@@ -32,6 +33,7 @@ in
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.programs.java.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -63,7 +65,23 @@ in
     jekyll
     cloc
     tree
+    docker
+    docker-machine
+    watchman
+    yarn
+    nodejs
+    cmake
+    ninja
+    cmark
+    postgresql
+    bloaty
+    fd
+    jdk
+    jre
+    thrift
   ];
+
+#  environment.variables.JAVA_HOME = "${pkgs.jdk.home}/lib/openjdk";
 
   environment.extraOutputsToInstall = [ "man" ];
 

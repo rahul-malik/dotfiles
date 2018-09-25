@@ -12,7 +12,7 @@
     set modelines=0
 
     " directory
-    set directory=/home/bkase/.vim
+    set directory=/Users/rmalik/.vim
 
     " disable backups (and swap)
     set nobackup

@@ -26,6 +26,7 @@ in
 
   system.defaults.finder.AppleShowAllExtensions = true;
   system.defaults.finder.FXEnableExtensionChangeWarning = false;
+  services.nix-daemon.enable = true;
 
   imports = [
     ./src/vim/c.nix
@@ -50,6 +51,7 @@ in
     ocamlPackages.camlp4
     asciinema
     fzf
+    fish
     gettext
     git
     ripgrep
@@ -57,7 +59,6 @@ in
     wget
     go
     fasd
-    nix-repl
     nox
     coreutils
     watchman
@@ -81,7 +82,6 @@ in
     thrift
   ];
 
-#  environment.variables.JAVA_HOME = "${pkgs.jdk.home}/lib/openjdk";
 
   environment.extraOutputsToInstall = [ "man" ];
 
@@ -89,4 +89,5 @@ in
   nix.requireSignedBinaryCaches = false;
 
   services.activate-system.enable = true;
+  nix.package = pkgs.nix;
 }
